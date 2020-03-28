@@ -1,0 +1,29 @@
+{
+  "name": "node-js-tutorials",
+  "version": "1.0.0",
+  "description": "Node JS Tutorials for GitHub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikhailMasny/node-js-tutorials.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs"
+  ],
+  "author": "Mikhail M.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikhailMasny/node-js-tutorials/issues"
+  },
+  "homepage": "https://github.com/MikhailMasny/node-js-tutorials#readme",
+  "dependencies": {
+    "chalk": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
