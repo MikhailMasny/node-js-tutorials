@@ -6,6 +6,21 @@ const server = http.createServer((request, response) => {
 
     let filePath = path.join(__dirname, "src", request.url === "/" ? "index.html" : request.url);
     const extension = path.extname(filePath);
+    let contentType = "text/html";
+
+    switch (extension) {
+        case ".css": {
+            contentType = "text/css";
+        } break;
+
+        case ".js": {
+            contentType = "text/javascript";
+        } break;
+
+        default: {
+            contentType = "text/html";
+        } break;
+    }
 
     if (!extension) {
         filePath += ".html";
@@ -28,7 +43,7 @@ const server = http.createServer((request, response) => {
             })
         } else {
             response.writeHead(200, {
-                "Content-Type": "text/html"
+                "Content-Type": contentType
             });
             response.end(content);
         }
@@ -36,6 +51,8 @@ const server = http.createServer((request, response) => {
 
 });
 
-server.listen("5000", () => {
-    console.log("Server has been started...");
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, () => {
+    console.log(`Server has been started on ${PORT}...`);
 });
